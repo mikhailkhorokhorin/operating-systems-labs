@@ -1,0 +1,8 @@
+{
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "clangd.arguments": ["--compile-commands-dir=${workspaceFolder}/build"],
+    "editor.formatOnSave": true,
+    "[cpp]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    }
+}

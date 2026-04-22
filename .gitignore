@@ -1,5 +1,2 @@
-.clang-format
-.vscode
-.devcontainer
 build
 .cache

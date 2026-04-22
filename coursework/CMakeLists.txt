@@ -16,7 +16,6 @@ add_library(chat_common
 
 find_package(Threads REQUIRED)
 
-# 👇 ВАЖНОЕ МЕСТО
 target_link_libraries(chat_common
     Threads::Threads
     rt
