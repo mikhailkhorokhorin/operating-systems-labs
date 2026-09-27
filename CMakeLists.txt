@@ -16,7 +16,7 @@ include(Lab)
 
 enable_testing()
 
-add_subdirectory(test_support)
+add_subdirectory(cmake/test_support)
 
 file(GLOB LAB_DIRS LIST_DIRECTORIES true RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}"
      "${CMAKE_CURRENT_SOURCE_DIR}/*")

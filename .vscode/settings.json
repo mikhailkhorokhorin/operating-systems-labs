@@ -1,6 +1,9 @@
 {
   "C_Cpp.intelliSenseEngine": "disabled",
-  "clangd.arguments": ["--header-insertion=never"],
+  "clangd.arguments": [
+    "--compile-commands-dir=build/debug",
+    "--header-insertion=never"
+  ],
   "cmake.useCMakePresets": "always",
   "cmake.configureOnOpen": false,
   "editor.formatOnSave": true,
@@ -15,5 +18,8 @@
   },
   "[markdown]": {
     "editor.defaultFormatter": "davidanson.vscode-markdownlint"
+  },
+  "markdownlint.config": {
+    "extends": "${workspaceFolder}/.config/.markdownlint.yaml"
   }
 }

@@ -7,7 +7,9 @@ COVERAGE_MIN ?= 80
 BUILD_DIR := build/$(PRESET)
 CI_EXTRA :=
 
--include local.mk
+PRE_COMMIT_CONFIG := .config/.pre-commit-config.yaml
+
+-include .config/local.mk
 
 .DEFAULT_GOAL := help
 
@@ -25,7 +27,7 @@ help:
 	@echo "make clean                                remove build outputs"
 
 setup:
-	pre-commit install
+	pre-commit install -c $(PRE_COMMIT_CONFIG)
 
 configure:
 	cmake --preset $(PRESET)
@@ -45,10 +47,10 @@ run:
 	@$(BUILD_DIR)/$(LAB)/$(LAB)_$(APP) $(ARGS)
 
 format:
-	-pre-commit run --all-files
+	-pre-commit run -c $(PRE_COMMIT_CONFIG) --all-files
 
 lint:
-	pre-commit run --all-files --show-diff-on-failure
+	pre-commit run -c $(PRE_COMMIT_CONFIG) --all-files --show-diff-on-failure
 	$(MAKE) tidy
 
 tidy:

@@ -27,6 +27,7 @@ repos:
     rev: v0.22.0
     hooks:
       - id: markdownlint-cli2
+        args: [--config, .config/.markdownlint.yaml]
         language_version: 22.20.0
   - repo: https://github.com/sqlfluff/sqlfluff
     rev: 4.3.0
