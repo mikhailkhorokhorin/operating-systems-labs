@@ -1,13 +1,23 @@
 {
-    "name": "C++",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "llvm-vs-code-extensions.vscode-clangd"
-            ]
-        }
+  "name": "C++ Labs",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "INSTALL_LATEX": "false"
     }
+  },
+  "runArgs": ["--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "llvm-vs-code-extensions.vscode-clangd",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools",
+        "editorconfig.editorconfig",
+        "davidanson.vscode-markdownlint",
+        "charliermarsh.ruff"
+      ]
+    }
+  }
 }

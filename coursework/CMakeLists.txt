@@ -1,40 +1,44 @@
-cmake_minimum_required(VERSION 3.10)
-project(coursework)
-
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-include_directories(include)
-
-add_library(chat_common
-    src/shared_memory_manager.cpp
-    src/user_manager.cpp
-    src/message_dispatcher.cpp
-    src/message_logger.cpp
-)
-
 find_package(Threads REQUIRED)
 
-target_link_libraries(chat_common
-    Threads::Threads
-    rt
+lab_library(coursework_core
+    SOURCES
+        src/chat_client.cpp
+        src/chat_server.cpp
+        src/client_command.cpp
+        src/line_reader.cpp
+        src/message_dispatcher.cpp
+        src/message_logger.cpp
+        src/message_queue.cpp
+        src/shared_memory.cpp
+        src/shared_memory_manager.cpp
+        src/sync.cpp
+        src/user_manager.cpp
+    LINK Threads::Threads
 )
 
-add_executable(server
-    app/server_main.cpp
-    src/chat_server.cpp
+lab_executable(coursework_server
+    SOURCES app/server_main.cpp
+    LINK coursework_core
 )
 
-add_executable(client
-    app/client_main.cpp
-    src/chat_client.cpp
+lab_executable(coursework_client
+    SOURCES app/client_main.cpp
+    LINK coursework_core
 )
 
-target_link_libraries(server
-    chat_common
-)
-
-target_link_libraries(client
-    chat_common
+lab_tests(coursework_tests
+    SOURCES
+        tests/chat.cpp
+        tests/client_command.cpp
+        tests/e2e.cpp
+        tests/line_reader.cpp
+        tests/message_dispatcher.cpp
+        tests/message_logger.cpp
+        tests/message_queue.cpp
+        tests/shared_memory.cpp
+        tests/shared_memory_manager.cpp
+        tests/user_manager.cpp
+    LINK coursework_core
+    BINARIES coursework_server coursework_client
+    LABEL threads
 )

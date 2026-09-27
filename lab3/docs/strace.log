@@ -1,0 +1,173 @@
+416   execve("build/release/lab3/lab3_main", ["build/release/lab3/lab3_main"], 0x7ffe2f979d98 /* 10 vars */) = 0
+416   brk(NULL)                         = 0x63fe20ffd000
+416   mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x73b65855e000
+416   access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+416   openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+416   fstat(3, {st_mode=S_IFREG|0644, st_size=25399, ...}) = 0
+416   mmap(NULL, 25399, PROT_READ, MAP_PRIVATE, 3, 0) = 0x73b658557000
+416   close(3)                          = 0
+416   openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+416   read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+416   fstat(3, {st_mode=S_IFREG|0644, st_size=2497768, ...}) = 0
+416   mmap(NULL, 2511040, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x73b6582f1000
+416   mmap(0x73b65838e000, 1216512, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9d000) = 0x73b65838e000
+416   mmap(0x73b6584b7000, 581632, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c6000) = 0x73b6584b7000
+416   mmap(0x73b658545000, 57344, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x254000) = 0x73b658545000
+416   mmap(0x73b658553000, 12480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x73b658553000
+416   close(3)                          = 0
+416   openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+416   read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+416   fstat(3, {st_mode=S_IFREG|0644, st_size=977112, ...}) = 0
+416   mmap(NULL, 978968, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x73b658201000
+416   mmap(0x73b658212000, 512000, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x11000) = 0x73b658212000
+416   mmap(0x73b65828f000, 393216, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8e000) = 0x73b65828f000
+416   mmap(0x73b6582ef000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xed000) = 0x73b6582ef000
+416   close(3)                          = 0
+416   openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+416   read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+416   fstat(3, {st_mode=S_IFREG|0644, st_size=182856, ...}) = 0
+416   mmap(NULL, 181160, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x73b6581d4000
+416   mmap(0x73b6581d8000, 143360, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4000) = 0x73b6581d8000
+416   mmap(0x73b6581fb000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x27000) = 0x73b6581fb000
+416   mmap(0x73b6581ff000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2b000) = 0x73b6581ff000
+416   close(3)                          = 0
+416   openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+416   read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0p\236\2\0\0\0\0\0"..., 832) = 832
+416   pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+416   fstat(3, {st_mode=S_IFREG|0755, st_size=1995216, ...}) = 0
+416   pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+416   mmap(NULL, 2047568, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x73b657fe0000
+416   mmap(0x73b658008000, 1454080, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x73b658008000
+416   mmap(0x73b65816b000, 352256, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x18b000) = 0x73b65816b000
+416   mmap(0x73b6581c1000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e0000) = 0x73b6581c1000
+416   mmap(0x73b6581c7000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x73b6581c7000
+416   close(3)                          = 0
+416   mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x73b657fde000
+416   mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x73b657fdb000
+416   arch_prctl(ARCH_SET_FS, 0x73b657fdb780) = 0
+416   set_tid_address(0x73b657fdba50)   = 416
+416   set_robust_list(0x73b657fdba60, 24) = 0
+416   rseq(0x73b657fdb6a0, 0x20, 0, 0x53053053) = 0
+416   mprotect(0x73b6581c1000, 16384, PROT_READ) = 0
+416   mprotect(0x73b6581ff000, 4096, PROT_READ) = 0
+416   mprotect(0x73b6582ef000, 4096, PROT_READ) = 0
+416   mprotect(0x73b658545000, 45056, PROT_READ) = 0
+416   mprotect(0x63fdfb7a2000, 4096, PROT_READ) = 0
+416   mprotect(0x73b658594000, 8192, PROT_READ) = 0
+416   prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+416   munmap(0x73b658557000, 25399)     = 0
+416   futex(0x73b65855373c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+416   getrandom("\x65\x9b\x36\x30\xb6\x22\x24\x1d", 8, GRND_NONBLOCK) = 8
+416   brk(NULL)                         = 0x63fe20ffd000
+416   brk(0x63fe2101e000)               = 0x63fe2101e000
+416   ioctl(0, TCGETS, 0x7ffd5d434230)  = -1 ENOTTY (Inappropriate ioctl for device)
+416   fstat(0, {st_mode=S_IFIFO|0600, st_size=0, ...}) = 0
+416   read(0, "lab3/tests/data/01.in\n", 4096) = 22
+416   newfstatat(AT_FDCWD, "/proc/self/exe", {st_mode=S_IFLNK|0777, st_size=0, ...}, AT_SYMLINK_NOFOLLOW) = 0
+416   readlink("/proc/self/exe", "build/release/lab3/lab3_ma"..., 128) = 34
+416   openat(AT_FDCWD, "lab3/tests/data/01.in", O_RDONLY) = 3
+416   read(3, "1.0 4.5\n-2 3.25 10\n0.1 0.2\n\n1677"..., 8191) = 47
+416   read(3, "", 8191)                 = 0
+416   close(3)                          = 0
+416   getpid()                          = 416
+416   openat(AT_FDCWD, "/dev/shm/lab3-416-0", O_RDWR|O_CREAT|O_EXCL|O_NOFOLLOW|O_CLOEXEC, 0600) = 3
+416   ftruncate(3, 0)                   = 0
+416   ftruncate(3, 55)                  = 0
+416   mmap(NULL, 55, PROT_READ|PROT_WRITE, MAP_SHARED, 3, 0) = 0x73b65855d000
+416   rt_sigprocmask(SIG_BLOCK, ~[], [], 8) = 0
+416   clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x73b657fdba50) = 417
+417   set_robust_list(0x73b657fdba60, 24 <unfinished ...>
+416   rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+417   <... set_robust_list resumed>)    = 0
+416   <... rt_sigprocmask resumed>NULL, 8) = 0
+417   rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+416   wait4(417,  <unfinished ...>
+417   <... rt_sigprocmask resumed>NULL, 8) = 0
+417   execve("build/release/lab3/lab3_child", ["build/release/lab3/lab3_ch"..., "/lab3-416-0"], 0x7ffd5d4344a8 /* 10 vars */) = 0
+417   brk(NULL)                         = 0x5f9bd2d11000
+417   mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b6be9355000
+417   access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+417   openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+417   fstat(3, {st_mode=S_IFREG|0644, st_size=25399, ...}) = 0
+417   mmap(NULL, 25399, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7b6be934e000
+417   close(3)                          = 0
+417   openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+417   read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+417   fstat(3, {st_mode=S_IFREG|0644, st_size=2497768, ...}) = 0
+417   mmap(NULL, 2511040, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b6be90e8000
+417   mmap(0x7b6be9185000, 1216512, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9d000) = 0x7b6be9185000
+417   mmap(0x7b6be92ae000, 581632, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c6000) = 0x7b6be92ae000
+417   mmap(0x7b6be933c000, 57344, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x254000) = 0x7b6be933c000
+417   mmap(0x7b6be934a000, 12480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7b6be934a000
+417   close(3)                          = 0
+417   openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+417   read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+417   fstat(3, {st_mode=S_IFREG|0644, st_size=977112, ...}) = 0
+417   mmap(NULL, 978968, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b6be8ff8000
+417   mmap(0x7b6be9009000, 512000, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x11000) = 0x7b6be9009000
+417   mmap(0x7b6be9086000, 393216, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8e000) = 0x7b6be9086000
+417   mmap(0x7b6be90e6000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xed000) = 0x7b6be90e6000
+417   close(3)                          = 0
+417   openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+417   read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+417   fstat(3, {st_mode=S_IFREG|0644, st_size=182856, ...}) = 0
+417   mmap(NULL, 181160, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b6be8fcb000
+417   mmap(0x7b6be8fcf000, 143360, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4000) = 0x7b6be8fcf000
+417   mmap(0x7b6be8ff2000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x27000) = 0x7b6be8ff2000
+417   mmap(0x7b6be8ff6000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2b000) = 0x7b6be8ff6000
+417   close(3)                          = 0
+417   openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+417   read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0p\236\2\0\0\0\0\0"..., 832) = 832
+417   pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+417   fstat(3, {st_mode=S_IFREG|0755, st_size=1995216, ...}) = 0
+417   pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+417   mmap(NULL, 2047568, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7b6be8dd7000
+417   mmap(0x7b6be8dff000, 1454080, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7b6be8dff000
+417   mmap(0x7b6be8f62000, 352256, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x18b000) = 0x7b6be8f62000
+417   mmap(0x7b6be8fb8000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e0000) = 0x7b6be8fb8000
+417   mmap(0x7b6be8fbe000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7b6be8fbe000
+417   close(3)                          = 0
+417   mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b6be8dd5000
+417   mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7b6be8dd2000
+417   arch_prctl(ARCH_SET_FS, 0x7b6be8dd2780) = 0
+417   set_tid_address(0x7b6be8dd2a50)   = 417
+417   set_robust_list(0x7b6be8dd2a60, 24) = 0
+417   rseq(0x7b6be8dd26a0, 0x20, 0, 0x53053053) = 0
+417   mprotect(0x7b6be8fb8000, 16384, PROT_READ) = 0
+417   mprotect(0x7b6be8ff6000, 4096, PROT_READ) = 0
+417   mprotect(0x7b6be90e6000, 4096, PROT_READ) = 0
+417   mprotect(0x7b6be933c000, 45056, PROT_READ) = 0
+417   mprotect(0x5f9bbb4bb000, 4096, PROT_READ) = 0
+417   mprotect(0x7b6be938b000, 8192, PROT_READ) = 0
+417   prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+417   munmap(0x7b6be934e000, 25399)     = 0
+417   futex(0x7b6be934a73c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+417   getrandom("\x08\xc4\x5c\x36\xb4\xda\x24\xcd", 8, GRND_NONBLOCK) = 8
+417   brk(NULL)                         = 0x5f9bd2d11000
+417   brk(0x5f9bd2d32000)               = 0x5f9bd2d32000
+417   openat(AT_FDCWD, "/dev/shm/lab3-416-0", O_RDWR|O_NOFOLLOW|O_CLOEXEC) = 3
+417   fstat(3, {st_mode=S_IFREG|0600, st_size=55, ...}) = 0
+417   mmap(NULL, 55, PROT_READ|PROT_WRITE, MAP_SHARED, 3, 0) = 0x7b6be9354000
+417   fstat(3, {st_mode=S_IFREG|0600, st_size=55, ...}) = 0
+417   munmap(0x7b6be9354000, 55)        = 0
+417   mmap(NULL, 55, PROT_READ|PROT_WRITE, MAP_SHARED, 3, 0) = 0x7b6be9354000
+417   ftruncate(3, 37)                  = 0
+417   munmap(0x7b6be9354000, 55)        = 0
+417   mmap(NULL, 37, PROT_READ|PROT_WRITE, MAP_SHARED, 3, 0) = 0x7b6be9354000
+417   munmap(0x7b6be9354000, 37)        = 0
+417   close(3)                          = 0
+417   exit_group(0)                     = ?
+417   +++ exited with 0 +++
+416   <... wait4 resumed>[{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 417
+416   --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=417, si_uid=0, si_status=0, si_utime=0, si_stime=0} ---
+416   fstat(3, {st_mode=S_IFREG|0600, st_size=37, ...}) = 0
+416   munmap(0x73b65855d000, 55)        = 0
+416   mmap(NULL, 37, PROT_READ|PROT_WRITE, MAP_SHARED, 3, 0) = 0x73b65855d000
+416   fstat(1, {st_mode=S_IFCHR|0666, st_rdev=makedev(0x1, 0x3), ...}) = 0
+416   ioctl(1, TCGETS, 0x7ffd5d433b50)  = -1 ENOTTY (Inappropriate ioctl for device)
+416   write(1, "5.5\n11.25\n0.3\n0\n16777218\n999\n", 29) = 29
+416   munmap(0x73b65855d000, 37)        = 0
+416   close(3)                          = 0
+416   unlink("/dev/shm/lab3-416-0")     = 0
+416   exit_group(0)                     = ?
+416   +++ exited with 0 +++

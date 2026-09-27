@@ -1,28 +1,48 @@
 #include "message_dispatcher.hpp"
 
-#include <cstring>
-#include <iostream>
+#include "message_queue.hpp"
 
-MessageDispatcher::MessageDispatcher(SharedMemory* sm, UserManager* um)
-    : sharedmemory(sm), user_manager(um) {
+namespace chat {
+
+MessageDispatcher::MessageDispatcher(SharedMemory& memory, const UserManager& users)
+    : memory_(&memory), users_(&users) {
 }
 
-int MessageDispatcher::find_user(const char* name) {
-    return user_manager->find_user(name);
+DeliveryStatus MessageDispatcher::deliver(const Message& message) {
+    const auto slot = users_->findUser(view(message.to));
+    if (!slot.has_value()) {
+        return DeliveryStatus::UnknownRecipient;
+    }
+    Message delivered = message;
+    delivered.kind = MessageKind::Text;
+    delivered.slot = *slot;
+    return pushTo(*slot, delivered) ? DeliveryStatus::Delivered : DeliveryStatus::QueueFull;
 }
 
-bool MessageDispatcher::deliver_message(const Message& msg) {
-    int to_idx = find_user(msg.to);
-    if (to_idx < 0) {
+bool MessageDispatcher::pushTo(int slot, const Message& message) {
+    if (slot < 0 || slot >= MAX_USERS) {
         return false;
     }
+    return tryPush(memory_->clientQueues[slot], message);
+}
 
-    auto& queue = sharedmemory->client_queues[to_idx];
-    pthread_mutex_lock(&queue.mutex);
-    if (queue.count < MAX_QUEUE) {
-        queue.messages[queue.count++] = msg;
-        pthread_cond_signal(&queue.cond);
+bool MessageDispatcher::notify(int slot, std::string_view text) {
+    Message message{};
+    message.kind = MessageKind::System;
+    message.slot = slot;
+    copyBounded(message.from, "server");
+    copyBounded(message.text, text);
+    return pushTo(slot, message);
+}
+
+void MessageDispatcher::broadcastShutdown() {
+    Message message{};
+    message.kind = MessageKind::Shutdown;
+    copyBounded(message.from, "server");
+    for (const int slot : users_->activeSlots()) {
+        message.slot = slot;
+        pushTo(slot, message);
     }
-    pthread_mutex_unlock(&queue.mutex);
-    return true;
+}
+
 }

@@ -1,8 +1,19 @@
 {
-    "C_Cpp.intelliSenseEngine": "disabled",
-    "clangd.arguments": ["--compile-commands-dir=${workspaceFolder}/build"],
-    "editor.formatOnSave": true,
-    "[cpp]": {
-        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
-    }
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "clangd.arguments": ["--header-insertion=never"],
+  "cmake.useCMakePresets": "always",
+  "cmake.configureOnOpen": false,
+  "editor.formatOnSave": true,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "[cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "davidanson.vscode-markdownlint"
+  }
 }

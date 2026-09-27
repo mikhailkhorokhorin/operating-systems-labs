@@ -1,13 +1,11 @@
-# Laboratory works on Operating Systems in C++
+# Operating Systems Labs
 
-## [№1. Interprocess Communication via Pipes](lab1/)
+C++20 labs on Linux system programming: processes, pipes, threads, shared memory, dynamic libraries and a chat built on shared memory.
 
-## [№2. Multithreading](lab2/)
-
-## [№3. Interprocess Communication via Shared Memory](lab3/)
-
-## [№4. Static and Dynamic Linking](lab4/)
-
----
-
-## [Coursework. Multiprocess Chat via Shared Memory](coursework/)
+| No. | Topic |
+| --- | --- |
+| 1 | [Processes and Pipes](lab1/) |
+| 2 | [Threads: Parallel Gauss-Jordan Elimination](lab2/) |
+| 3 | [Shared Memory Between Processes](lab3/) |
+| 4 | [Static and Dynamic Libraries](lab4/) |
+| CW | [Chat over Shared Memory](coursework/) |

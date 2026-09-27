@@ -1,0 +1,9 @@
+Loaded libbasic.so
+PrimeCount = 4
+Pi = 3.14059
+Switched to libadvanced.so
+PrimeCount = 4
+Pi = 3.14081
+PrimeCount = 8
+Switched to libbasic.so
+Pi = 3.14059

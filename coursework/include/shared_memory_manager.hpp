@@ -1,29 +1,39 @@
 #pragma once
 
-#include <fcntl.h>
-#include <sys/mman.h>
-#include <unistd.h>
-
-#include <cstdlib>
-#include <iostream>
+#include <optional>
+#include <string>
+#include <string_view>
 
 #include "shared_memory.hpp"
 
-constexpr const char* SHM_NAME = "/chat_shm";
+namespace chat {
 
 class SharedMemoryManager {
-   public:
-    SharedMemoryManager();
-    ~SharedMemoryManager();
+public:
+    static SharedMemoryManager create(const std::string& name);
+    static SharedMemoryManager attach(const std::string& name);
 
-    SharedMemory* get();
+    ~SharedMemoryManager();
 
     SharedMemoryManager(const SharedMemoryManager&) = delete;
     SharedMemoryManager& operator=(const SharedMemoryManager&) = delete;
+    SharedMemoryManager(SharedMemoryManager&& other) noexcept;
+    SharedMemoryManager& operator=(SharedMemoryManager&& other) noexcept;
 
-   private:
-    SharedMemory* sharedmemory;
-    int fd;
+    SharedMemory& memory() const { return *memory_; }
+    const std::string& name() const { return name_; }
+    bool owner() const { return owner_; }
 
-    void init_shared_memory();
+private:
+    SharedMemoryManager(std::string name, SharedMemory* memory, bool owner);
+
+    void release() noexcept;
+
+    std::string name_;
+    SharedMemory* memory_ = nullptr;
+    bool owner_ = false;
 };
+
+std::string resolveShmName(std::optional<std::string_view> argument);
+
+}

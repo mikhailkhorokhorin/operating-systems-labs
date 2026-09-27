@@ -1,0 +1,155 @@
+407   execve("build/release/lab2/lab2_main", ["build/release/lab2/lab2_main", "2"], 0x7ffe5076f170 /* 10 vars */) = 0
+407   brk(NULL)                         = 0x562a66132000
+407   mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7952c9988000
+407   access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+407   openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+407   fstat(3, {st_mode=S_IFREG|0644, st_size=25399, ...}) = 0
+407   mmap(NULL, 25399, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7952c9981000
+407   close(3)                          = 0
+407   openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+407   read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+407   fstat(3, {st_mode=S_IFREG|0644, st_size=2497768, ...}) = 0
+407   mmap(NULL, 2511040, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7952c971b000
+407   mmap(0x7952c97b8000, 1216512, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9d000) = 0x7952c97b8000
+407   mmap(0x7952c98e1000, 581632, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c6000) = 0x7952c98e1000
+407   mmap(0x7952c996f000, 57344, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x254000) = 0x7952c996f000
+407   mmap(0x7952c997d000, 12480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7952c997d000
+407   close(3)                          = 0
+407   openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+407   read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+407   fstat(3, {st_mode=S_IFREG|0644, st_size=977112, ...}) = 0
+407   mmap(NULL, 978968, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7952c962b000
+407   mmap(0x7952c963c000, 512000, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x11000) = 0x7952c963c000
+407   mmap(0x7952c96b9000, 393216, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8e000) = 0x7952c96b9000
+407   mmap(0x7952c9719000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xed000) = 0x7952c9719000
+407   close(3)                          = 0
+407   openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+407   read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+407   fstat(3, {st_mode=S_IFREG|0644, st_size=182856, ...}) = 0
+407   mmap(NULL, 181160, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7952c95fe000
+407   mmap(0x7952c9602000, 143360, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4000) = 0x7952c9602000
+407   mmap(0x7952c9625000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x27000) = 0x7952c9625000
+407   mmap(0x7952c9629000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2b000) = 0x7952c9629000
+407   close(3)                          = 0
+407   openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+407   read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0p\236\2\0\0\0\0\0"..., 832) = 832
+407   pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+407   fstat(3, {st_mode=S_IFREG|0755, st_size=1995216, ...}) = 0
+407   pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+407   mmap(NULL, 2047568, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7952c940a000
+407   mmap(0x7952c9432000, 1454080, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7952c9432000
+407   mmap(0x7952c9595000, 352256, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x18b000) = 0x7952c9595000
+407   mmap(0x7952c95eb000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e0000) = 0x7952c95eb000
+407   mmap(0x7952c95f1000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7952c95f1000
+407   close(3)                          = 0
+407   mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7952c9408000
+407   mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7952c9405000
+407   arch_prctl(ARCH_SET_FS, 0x7952c9405780) = 0
+407   set_tid_address(0x7952c9405a50)   = 407
+407   set_robust_list(0x7952c9405a60, 24) = 0
+407   rseq(0x7952c94056a0, 0x20, 0, 0x53053053) = 0
+407   mprotect(0x7952c95eb000, 16384, PROT_READ) = 0
+407   mprotect(0x7952c9629000, 4096, PROT_READ) = 0
+407   mprotect(0x7952c9719000, 4096, PROT_READ) = 0
+407   mprotect(0x7952c996f000, 45056, PROT_READ) = 0
+407   mprotect(0x562a372e7000, 4096, PROT_READ) = 0
+407   mprotect(0x7952c99be000, 8192, PROT_READ) = 0
+407   prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+407   munmap(0x7952c9981000, 25399)     = 0
+407   futex(0x7952c997d73c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+407   getrandom("\x8c\x14\xfa\xfb\x8a\x0f\x26\x85", 8, GRND_NONBLOCK) = 8
+407   brk(NULL)                         = 0x562a66132000
+407   brk(0x562a66153000)               = 0x562a66153000
+407   ioctl(0, TCGETS, 0x7fff1404e020)  = -1 ENOTTY (Inappropriate ioctl for device)
+407   fstat(0, {st_mode=S_IFREG|0777, st_size=27, ...}) = 0
+407   read(0, "3\n0 2 1\n1 1 1\n2 1 -1\n7 6 1\n", 4096) = 27
+407   rt_sigaction(SIGRT_1, {sa_handler=0x7952c949a1d0, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x7952c9449d70}, NULL, 8) = 0
+407   rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+407   mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7952c8c04000
+407   mprotect(0x7952c8c05000, 8388608, PROT_READ|PROT_WRITE) = 0
+407   rt_sigprocmask(SIG_BLOCK, ~[], [], 8) = 0
+407   clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7952c9404990, parent_tid=0x7952c9404990, exit_signal=0, stack=0x7952c8c04000, stack_size=0x7fff40, tls=0x7952c94046c0} => {parent_tid=[408]}, 88) = 408
+408   rseq(0x7952c94045e0, 0x20, 0, 0x53053053 <unfinished ...>
+407   rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+408   <... rseq resumed>)               = 0
+407   <... rt_sigprocmask resumed>NULL, 8) = 0
+408   set_robust_list(0x7952c94049a0, 24 <unfinished ...>
+407   mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0 <unfinished ...>
+408   <... set_robust_list resumed>)    = 0
+407   <... mmap resumed>)               = 0x7952c8403000
+408   rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+407   mprotect(0x7952c8404000, 8388608, PROT_READ|PROT_WRITE <unfinished ...>
+408   <... rt_sigprocmask resumed>NULL, 8) = 0
+407   <... mprotect resumed>)           = 0
+408   sched_yield( <unfinished ...>
+407   rt_sigprocmask(SIG_BLOCK, ~[],  <unfinished ...>
+408   <... sched_yield resumed>)        = 0
+407   <... rt_sigprocmask resumed>[], 8) = 0
+408   sched_yield( <unfinished ...>
+407   clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7952c8c03990, parent_tid=0x7952c8c03990, exit_signal=0, stack=0x7952c8403000, stack_size=0x7fff40, tls=0x7952c8c036c0} <unfinished ...>
+408   <... sched_yield resumed>)        = 0
+407   <... clone3 resumed> => {parent_tid=[409]}, 88) = 409
+408   sched_yield( <unfinished ...>
+407   rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+409   rseq(0x7952c8c035e0, 0x20, 0, 0x53053053 <unfinished ...>
+407   <... rt_sigprocmask resumed>NULL, 8) = 0
+408   <... sched_yield resumed>)        = 0
+407   futex(0x7952c9404990, FUTEX_WAIT_BITSET|FUTEX_CLOCK_REALTIME, 408, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+409   <... rseq resumed>)               = 0
+408   sched_yield( <unfinished ...>
+409   set_robust_list(0x7952c8c039a0, 24 <unfinished ...>
+408   <... sched_yield resumed>)        = 0
+409   <... set_robust_list resumed>)    = 0
+408   futex(0x562a372e8d80, FUTEX_WAIT, 0, NULL <unfinished ...>
+409   rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+409   futex(0x562a372e8d80, FUTEX_WAKE, 2147483647) = 1
+408   <... futex resumed>)              = 0
+409   sched_yield( <unfinished ...>
+408   futex(0x562a372e8d80, FUTEX_WAKE, 2147483647 <unfinished ...>
+409   <... sched_yield resumed>)        = 0
+408   <... futex resumed>)              = 0
+409   sched_yield( <unfinished ...>
+408   futex(0x562a372e8d80, FUTEX_WAKE, 2147483647 <unfinished ...>
+409   <... sched_yield resumed>)        = 0
+408   <... futex resumed>)              = 0
+409   sched_yield( <unfinished ...>
+408   futex(0x562a372e8d80, FUTEX_WAKE, 2147483647 <unfinished ...>
+409   <... sched_yield resumed>)        = 0
+408   <... futex resumed>)              = 0
+409   mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0 <unfinished ...>
+408   mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0 <unfinished ...>
+409   <... mmap resumed>)               = 0x7952c0403000
+408   <... mmap resumed>)               = 0x7952b8403000
+409   munmap(0x7952c0403000, 62902272 <unfinished ...>
+408   munmap(0x7952b8403000, 62902272 <unfinished ...>
+409   <... munmap resumed>)             = 0
+408   <... munmap resumed>)             = 0
+409   munmap(0x7952c8000000, 4206592 <unfinished ...>
+408   munmap(0x7952c0000000, 4206592 <unfinished ...>
+409   <... munmap resumed>)             = 0
+408   <... munmap resumed>)             = 0
+409   mprotect(0x7952c4000000, 135168, PROT_READ|PROT_WRITE <unfinished ...>
+408   mprotect(0x7952bc000000, 135168, PROT_READ|PROT_WRITE <unfinished ...>
+409   <... mprotect resumed>)           = 0
+408   <... mprotect resumed>)           = 0
+409   rt_sigprocmask(SIG_BLOCK, ~[RT_1],  <unfinished ...>
+408   rt_sigprocmask(SIG_BLOCK, ~[RT_1],  <unfinished ...>
+409   <... rt_sigprocmask resumed>NULL, 8) = 0
+408   <... rt_sigprocmask resumed>NULL, 8) = 0
+409   madvise(0x7952c8403000, 8368128, MADV_DONTNEED <unfinished ...>
+408   madvise(0x7952c8c04000, 8368128, MADV_DONTNEED <unfinished ...>
+409   <... madvise resumed>)            = 0
+408   <... madvise resumed>)            = 0
+409   exit(0 <unfinished ...>
+408   exit(0 <unfinished ...>
+409   <... exit resumed>)               = ?
+408   <... exit resumed>)               = ?
+409   +++ exited with 0 +++
+407   <... futex resumed>)              = 0
+408   +++ exited with 0 +++
+407   fstat(1, {st_mode=S_IFCHR|0666, st_rdev=makedev(0x1, 0x3), ...}) = 0
+407   ioctl(1, TCGETS, 0x7fff1404dd60)  = -1 ENOTTY (Inappropriate ioctl for device)
+407   write(1, "x[0] = 1\nx[1] = 2\nx[2] = 3\n", 27) = 27
+407   lseek(0, -1, SEEK_CUR)            = 26
+407   exit_group(0)                     = ?
+407   +++ exited with 0 +++

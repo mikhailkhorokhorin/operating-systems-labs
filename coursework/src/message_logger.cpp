@@ -1,42 +1,43 @@
 #include "message_logger.hpp"
 
-#include <cstring>
+#include <utility>
 
-MessageLogger::MessageLogger(SharedMemory* sm) : sharedmemory(sm) {
+namespace chat {
+
+MessageLogger::MessageLogger(LogSink sink) : sink_(std::move(sink)) {
 }
 
-void MessageLogger::log_message(const Message& message) const {
-    std::cout << "[message] " << message.from << " -> " << message.to << ": " << message.text
-              << std::endl;
+void MessageLogger::log(const std::string& line) const {
+    if (sink_) {
+        sink_(line);
+    }
 }
 
-void MessageLogger::save_history(const Message& message) {
-    if (sharedmemory->history_count >= MAX_HISTORY)
-        return;
-
-    auto& entry = sharedmemory->history[sharedmemory->history_count++];
-    strcpy(entry.from, message.from);
-    strcpy(entry.to, message.to);
-    strcpy(entry.text, message.text);
+void MessageLogger::record(const Message& message) {
+    log("[message] " + std::string(view(message.from)) + " -> " + std::string(view(message.to)) +
+        ": " + std::string(view(message.text)));
+    history_.push_back(message);
+    if (history_.size() > MAX_HISTORY) {
+        history_.pop_front();
+    }
 }
 
-std::vector<Message> MessageLogger::search_history(const std::string& keyword) const {
-    std::vector<Message> results;
-
-    for (int i = 0; i < sharedmemory->history_count; ++i) {
-        const HistoryEntry& entry = sharedmemory->history[i];
-        if (std::string(entry.from).find(keyword) != std::string::npos ||
-            std::string(entry.to).find(keyword) != std::string::npos ||
-            std::string(entry.text).find(keyword) != std::string::npos) {
-        
-            Message message{};
-            strncpy(message.from, entry.from, MAX_NAME);
-            strncpy(message.to, entry.to, MAX_NAME);
-            strncpy(message.text, entry.text, MAX_TEXT);
-
-            results.push_back(message);
+std::vector<Message> MessageLogger::search(std::string_view participant,
+                                           std::string_view keyword) const {
+    std::vector<Message> matches;
+    for (const auto& message : history_) {
+        const auto from = view(message.from);
+        const auto to = view(message.to);
+        if (from != participant && to != participant) {
+            continue;
+        }
+        if (from.find(keyword) != std::string_view::npos ||
+            to.find(keyword) != std::string_view::npos ||
+            view(message.text).find(keyword) != std::string_view::npos) {
+            matches.push_back(message);
         }
     }
+    return matches;
+}
 
-    return results;
 }

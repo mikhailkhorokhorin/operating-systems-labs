@@ -1,0 +1,81 @@
+423   execve("build/release/lab4/lab4_static", ["build/release/lab4/lab4_static"], 0x7ffc23c25678 /* 10 vars */) = 0
+423   brk(NULL)                         = 0x637471fbd000
+423   mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7e8b9045e000
+423   access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+423   openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+423   fstat(3, {st_mode=S_IFREG|0644, st_size=25399, ...}) = 0
+423   mmap(NULL, 25399, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7e8b90457000
+423   close(3)                          = 0
+423   openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+423   read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+423   fstat(3, {st_mode=S_IFREG|0644, st_size=2497768, ...}) = 0
+423   mmap(NULL, 2511040, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7e8b901f1000
+423   mmap(0x7e8b9028e000, 1216512, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9d000) = 0x7e8b9028e000
+423   mmap(0x7e8b903b7000, 581632, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c6000) = 0x7e8b903b7000
+423   mmap(0x7e8b90445000, 57344, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x254000) = 0x7e8b90445000
+423   mmap(0x7e8b90453000, 12480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7e8b90453000
+423   close(3)                          = 0
+423   openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+423   read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+423   fstat(3, {st_mode=S_IFREG|0644, st_size=182856, ...}) = 0
+423   mmap(NULL, 181160, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7e8b901c4000
+423   mmap(0x7e8b901c8000, 143360, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4000) = 0x7e8b901c8000
+423   mmap(0x7e8b901eb000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x27000) = 0x7e8b901eb000
+423   mmap(0x7e8b901ef000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2b000) = 0x7e8b901ef000
+423   close(3)                          = 0
+423   openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+423   read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0p\236\2\0\0\0\0\0"..., 832) = 832
+423   pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+423   fstat(3, {st_mode=S_IFREG|0755, st_size=1995216, ...}) = 0
+423   pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+423   mmap(NULL, 2047568, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7e8b8ffd0000
+423   mmap(0x7e8b8fff8000, 1454080, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7e8b8fff8000
+423   mmap(0x7e8b9015b000, 352256, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x18b000) = 0x7e8b9015b000
+423   mmap(0x7e8b901b1000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e0000) = 0x7e8b901b1000
+423   mmap(0x7e8b901b7000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7e8b901b7000
+423   close(3)                          = 0
+423   openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+423   read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+423   fstat(3, {st_mode=S_IFREG|0644, st_size=977112, ...}) = 0
+423   mmap(NULL, 978968, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7e8b8fee0000
+423   mmap(0x7e8b8fef1000, 512000, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x11000) = 0x7e8b8fef1000
+423   mmap(0x7e8b8ff6e000, 393216, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8e000) = 0x7e8b8ff6e000
+423   mmap(0x7e8b8ffce000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xed000) = 0x7e8b8ffce000
+423   close(3)                          = 0
+423   mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7e8b8fede000
+423   mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7e8b8fedb000
+423   arch_prctl(ARCH_SET_FS, 0x7e8b8fedb780) = 0
+423   set_tid_address(0x7e8b8fedba50)   = 423
+423   set_robust_list(0x7e8b8fedba60, 24) = 0
+423   rseq(0x7e8b8fedb6a0, 0x20, 0, 0x53053053) = 0
+423   mprotect(0x7e8b901b1000, 16384, PROT_READ) = 0
+423   mprotect(0x7e8b8ffce000, 4096, PROT_READ) = 0
+423   mprotect(0x7e8b901ef000, 4096, PROT_READ) = 0
+423   mprotect(0x7e8b90445000, 45056, PROT_READ) = 0
+423   mprotect(0x63746ff7a000, 4096, PROT_READ) = 0
+423   mprotect(0x7e8b90494000, 8192, PROT_READ) = 0
+423   prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+423   munmap(0x7e8b90457000, 25399)     = 0
+423   futex(0x7e8b9045373c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+423   getrandom("\x9f\x32\xe0\x01\xe0\xdd\x8b\xdb", 8, GRND_NONBLOCK) = 8
+423   brk(NULL)                         = 0x637471fbd000
+423   brk(0x637471fde000)               = 0x637471fde000
+423   ioctl(0, TCGETS, 0x7ffd37f76e00)  = -1 ENOTTY (Inappropriate ioctl for device)
+423   fstat(0, {st_mode=S_IFREG|0777, st_size=39, ...}) = 0
+423   read(0, "1 1 10\n1 -5 20\n2 1000\n0\n3\n\n1 5\nq"..., 4096) = 39
+423   fstat(1, {st_mode=S_IFCHR|0666, st_rdev=makedev(0x1, 0x3), ...}) = 0
+423   ioctl(1, TCGETS, 0x7ffd37f76950)  = -1 ENOTTY (Inappropriate ioctl for device)
+423   write(1, "PrimeCount = 4\n", 15)  = 15
+423   write(1, "PrimeCount = 8\n", 15)  = 15
+423   write(1, "Pi = 3.14059\n", 13)    = 13
+423   futex(0x7e8b901f0230, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+423   write(2, "error: ", 7)            = 7
+423   write(2, "switching implementations requir"..., 47) = 47
+423   write(2, "\n", 1)                 = 1
+423   write(2, "error: unknown command '", 24) = 24
+423   write(2, "3", 1)                  = 1
+423   write(2, "'\n", 2)                = 2
+423   write(2, "error: usage: 1 A B\n", 20) = 20
+423   lseek(0, -6, SEEK_CUR)            = 33
+423   exit_group(0)                     = ?
+423   +++ exited with 0 +++

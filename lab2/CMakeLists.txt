@@ -1,10 +1,23 @@
-cmake_minimum_required(VERSION 3.10)
-project(lab2)
-
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
-
-add_executable(lab2_main main.cpp)
-
 find_package(Threads REQUIRED)
-target_link_libraries(lab2_main PRIVATE Threads::Threads)
+
+lab_library(lab2_core
+    SOURCES
+        src/cli.cpp
+        src/gauss_jordan.cpp
+    LINK Threads::Threads
+)
+
+lab_executable(lab2_main
+    SOURCES app/main.cpp
+    LINK lab2_core
+)
+
+lab_tests(lab2_tests
+    SOURCES
+        tests/cli.cpp
+        tests/e2e.cpp
+        tests/gauss_jordan.cpp
+    LINK lab2_core
+    BINARIES lab2_main
+    LABEL threads
+)

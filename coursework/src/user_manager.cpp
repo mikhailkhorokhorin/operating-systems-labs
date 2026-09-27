@@ -1,44 +1,125 @@
 #include "user_manager.hpp"
 
-UserManager::UserManager(SharedMemory* sm) : sharedmemory(sm) {
+#include <algorithm>
+
+#include "message_queue.hpp"
+#include "sync.hpp"
+
+namespace chat {
+
+namespace {
+
+bool validSlot(int slot) {
+    return slot >= 0 && slot < MAX_USERS;
 }
 
-int UserManager::find_user(const char* name) const {
-    for (int i = 0; i < MAX_USERS; ++i)
-        if (strcmp(sharedmemory->usernames[i], name) == 0)
-            return i;
-    return -1;
+bool processGone(pid_t pid) {
+    return pid > 0 && !processAlive(pid);
 }
 
-bool UserManager::login_user(const char* name) {
-    pthread_mutex_lock(&sharedmemory->users_mutex);
+void releaseSlot(SharedMemory& memory, int slot) {
+    memory.users[slot] = UserSlot{};
+    clearQueue(memory.clientQueues[slot]);
+}
 
-    for (int i = 0; i < MAX_USERS; ++i) {
-        if (sharedmemory->usernames[i][0] == '\0') {
-            strcpy(sharedmemory->usernames[i], name);
-            std::cout << "[user] " << name << " has logged in" << std::endl;
-            pthread_mutex_unlock(&sharedmemory->users_mutex);
-            return true;
+}
+
+bool isValidName(std::string_view name) {
+    if (name.empty() || name.size() >= static_cast<std::size_t>(MAX_NAME)) {
+        return false;
+    }
+    return std::ranges::all_of(
+        name, [](char symbol) { return symbol > ' ' && symbol < '\x7f' && symbol != ':'; });
+}
+
+UserManager::UserManager(SharedMemory& memory) : memory_(&memory) {
+}
+
+LoginResult UserManager::login(std::string_view name, pid_t pid) {
+    if (!isValidName(name)) {
+        return {LoginStatus::InvalidName, -1};
+    }
+    const RobustLock lock(memory_->usersMutex);
+    int freeSlot = -1;
+    for (int slot = 0; slot < MAX_USERS; ++slot) {
+        const auto& user = memory_->users[slot];
+        if (user.active != 0) {
+            if (view(user.name) == name) {
+                return {LoginStatus::NameTaken, -1};
+            }
+        } else if (freeSlot < 0) {
+            freeSlot = slot;
         }
     }
-
-    pthread_mutex_unlock(&sharedmemory->users_mutex);
-    std::cout << "[error] No free slots available for user " << name << std::endl;
-    return false;
+    if (freeSlot < 0) {
+        return {LoginStatus::ServerFull, -1};
+    }
+    clearQueue(memory_->clientQueues[freeSlot]);
+    auto& user = memory_->users[freeSlot];
+    user.active = 1;
+    user.pid = pid;
+    copyBounded(user.name, name);
+    return {LoginStatus::Accepted, freeSlot};
 }
 
-bool UserManager::logout_user(const char* name) {
-    pthread_mutex_lock(&sharedmemory->users_mutex);
-
-    int index = find_user(name);
-    if (index >= 0) {
-        sharedmemory->usernames[index][0] = '\0';
-        std::cout << "[user] " << name << " has logged out" << std::endl;
-        pthread_mutex_unlock(&sharedmemory->users_mutex);
-        return true;
+bool UserManager::logout(int slot, std::string_view name) {
+    if (!validSlot(slot)) {
+        return false;
     }
+    const RobustLock lock(memory_->usersMutex);
+    const auto& user = memory_->users[slot];
+    if (user.active == 0 || view(user.name) != name) {
+        return false;
+    }
+    releaseSlot(*memory_, slot);
+    return true;
+}
 
-    pthread_mutex_unlock(&sharedmemory->users_mutex);
-    std::cout << "[error] User " << name << " not found" << std::endl;
-    return false;
+std::optional<int> UserManager::findUser(std::string_view name) const {
+    if (name.empty()) {
+        return std::nullopt;
+    }
+    const RobustLock lock(memory_->usersMutex);
+    for (int slot = 0; slot < MAX_USERS; ++slot) {
+        const auto& user = memory_->users[slot];
+        if (user.active != 0 && view(user.name) == name) {
+            return slot;
+        }
+    }
+    return std::nullopt;
+}
+
+bool UserManager::owns(int slot, std::string_view name) const {
+    if (!validSlot(slot)) {
+        return false;
+    }
+    const RobustLock lock(memory_->usersMutex);
+    const auto& user = memory_->users[slot];
+    return user.active != 0 && view(user.name) == name;
+}
+
+std::vector<int> UserManager::activeSlots() const {
+    std::vector<int> slots;
+    const RobustLock lock(memory_->usersMutex);
+    for (int slot = 0; slot < MAX_USERS; ++slot) {
+        if (memory_->users[slot].active != 0) {
+            slots.push_back(slot);
+        }
+    }
+    return slots;
+}
+
+std::vector<std::string> UserManager::reapDisconnected() {
+    std::vector<std::string> names;
+    const RobustLock lock(memory_->usersMutex);
+    for (int slot = 0; slot < MAX_USERS; ++slot) {
+        const auto& user = memory_->users[slot];
+        if (user.active != 0 && processGone(user.pid)) {
+            names.emplace_back(view(user.name));
+            releaseSlot(*memory_, slot);
+        }
+    }
+    return names;
+}
+
 }
