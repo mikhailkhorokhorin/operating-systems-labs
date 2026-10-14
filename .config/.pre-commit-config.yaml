@@ -13,6 +13,11 @@ repos:
       - id: check-merge-conflict
       - id: check-added-large-files
         args: [--maxkb=1024, --enforce-all]
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.9.1
+    hooks:
+      - id: nbstripout
+        args: [--extra-keys, metadata.language_info cell.metadata.execution]
   - repo: https://github.com/pre-commit/mirrors-clang-format
     rev: v19.1.7
     hooks:
@@ -33,8 +38,10 @@ repos:
     rev: 4.3.0
     hooks:
       - id: sqlfluff-fix
+        args: [--config, .config/.sqlfluff]
         exclude: /tests/
       - id: sqlfluff-lint
+        args: [--config, .config/.sqlfluff]
         exclude: /tests/
   - repo: local
     hooks:

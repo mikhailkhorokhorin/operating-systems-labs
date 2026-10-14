@@ -1,7 +1,5 @@
 # Operating Systems Labs
 
-C++20 labs on Linux system programming: processes, pipes, threads, shared memory, dynamic libraries and a chat built on shared memory.
-
 | No. | Topic |
 | --- | --- |
 | 1 | [Processes and Pipes](lab1/) |
